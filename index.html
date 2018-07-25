@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IBW</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Ideal Body Weight</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                <div class="card">
+            </ul>
+            </div>
+    </nav>
+    <form action="">
+        <div id="gender">
+            <br>
+
+            <input name="gender" type="radio" value="male" id="test1" />
+            <label for="test1">
+                <p class="p1">Male &#9794;</p>
+            </label>
+            <br>
+            <input name="gender" type="radio" value="female" id="test2" />
+            <label for="test2">
+                <p class="p2">Female &#9792;</p>
+            </label>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" name="height" class="materialize-textarea"></textarea>
+                <label for="textarea1">Height (In Inches)</label>
+            </div>
+        </div>
+
+        <button onclick="calc(event)">Calc</button>
+    </form>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script>
+        function calc(e) {
+            e.preventDefault()
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var height = parseInt(document.getElementById("textarea1").value);
+            console.log(gender, height)
+            alert(ibw(gender, height))
+        }
+        function ibw(gender, height) {
+            if (gender === "male") {
+                if (height <= 60) {
+                    return 106
+                }
+                else {
+                    var iOv5 = height - 60
+                    alert(106 + 6 * iOv5)
+                }
+            }
+            if (gender === "female") {
+                if (height <= 60) {
+                    return 100
+                }
+                else {
+                    var iOv5 = height - 60
+                    alert(106 + 5 * iOv5)
+                }
+            }
+
+        }
+
+    </script>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <p class="grey-text text-lighten-4"></p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <ul>
+                        <li>
+                            <a class="blue-text" href="file:///Users/holdenfriedrich/Desktop/BeachCoders/SignUp/index.html">Sign Up</a>
+                        </li>
+                        <li>
+                            <a class="blue-text" href="file:///Users/holdenfriedrich/Desktop/BeachCoders/DaySix/index.html">Clicker</a>
+                        </li>
+                        <li>
+                            <a class="blue-text" href="file:///Users/holdenfriedrich/Desktop/BeachCoders/RPS/index.html?options=on">RPS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
